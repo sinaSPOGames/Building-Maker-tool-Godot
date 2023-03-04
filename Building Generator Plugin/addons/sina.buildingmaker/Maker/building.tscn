@@ -1,0 +1,512 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://addons/sina.buildingmaker/BuildingMaker.gd" type="Script" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.529412, 0.529412, 0.529412, 1 )
+roughness = 0.65
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.231373, 0.231373, 0.231373, 1 )
+metallic = 0.49
+metallic_specular = 0.71
+roughness = 0.0
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.65098, 0.603922, 0.447059, 1 )
+metallic = 0.61
+roughness = 0.52
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.329412, 0.329412, 0.329412, 1 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[node name="Plugin" type="Spatial"]
+script = ExtResource( 1 )
+max_randomize_scale = 3.0
+window_size = 1.168
+building_height = 4.0
+
+[node name="building-main-node" type="CSGCombiner" parent="."]
+snap = 0.0001
+
+[node name="Base Building" type="CSGPolygon" parent="building-main-node"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+snap = 0.025
+polygon = PoolVector2Array( -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5 )
+depth = 1.62639
+material = SubResource( 2 )
+
+[node name="1window" type="CSGPolygon" parent="building-main-node" groups=["floor1"]]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1.168, 0, -1, 0, -1.62921e-07, 0.50945, 0.2, -0.35 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="1window2" type="CSGPolygon" parent="building-main-node" groups=["floor1"]]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1.168, 0, -1, 0, -1.62921e-07, 0.50945, 0.2, 1.02497e-16 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.329, -0.1, 0.05, 0.1, 0.05, 0.1, -0.329 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="1window3" type="CSGPolygon" parent="building-main-node" groups=["floor1"]]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1.168, 0, -1, 0, -1.62921e-07, 0.50945, 0.2, 0.35 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="2window" type="CSGPolygon" parent="building-main-node" groups=["floor2"]]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1.168, 0, -1, 0, -1.62921e-07, 0.50945, 0.606596, -0.35 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="2window2" type="CSGPolygon" parent="building-main-node" groups=["floor2"]]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1.168, 0, -1, 0, -1.62921e-07, 0.50945, 0.606596, 1.02497e-16 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="2window3" type="CSGPolygon" parent="building-main-node" groups=["floor2"]]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1.168, 0, -1, 0, -1.62921e-07, 0.50945, 0.606596, 0.35 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="3window" type="CSGPolygon" parent="building-main-node" groups=["floor3"]]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1.168, 0, -1, 0, -1.62921e-07, 0.50945, 1.01319, -0.35 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="3window2" type="CSGPolygon" parent="building-main-node" groups=["floor3"]]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1.168, 0, -1, 0, -1.62921e-07, 0.50945, 1.01319, 1.02497e-16 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="3window3" type="CSGPolygon" parent="building-main-node" groups=["floor3"]]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1.168, 0, -1, 0, -1.62921e-07, 0.50945, 1.01319, 0.35 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="1window4" type="CSGPolygon" parent="building-main-node" groups=["floor1"]]
+transform = Transform( 1, 0, 6.35736e-08, 0, 1.168, 0, -6.35736e-08, 0, 1, 0.35, 0.2, 0.50945 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="1window5" type="CSGPolygon" parent="building-main-node" groups=["floor1"]]
+transform = Transform( 1, 0, 6.35736e-08, 0, 1.168, 0, -6.35736e-08, 0, 1, -2.22688e-08, 0.2, 0.50945 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="1window6" type="CSGPolygon" parent="building-main-node" groups=["floor1"]]
+transform = Transform( 1, 0, 6.35736e-08, 0, 1.168, 0, -6.35736e-08, 0, 1, -0.35, 0.2, 0.50945 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="2window4" type="CSGPolygon" parent="building-main-node" groups=["floor2"]]
+transform = Transform( 1, 0, 6.35736e-08, 0, 1.168, 0, -6.35736e-08, 0, 1, 0.35, 0.606596, 0.50945 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="2window5" type="CSGPolygon" parent="building-main-node" groups=["floor2"]]
+transform = Transform( 1, 0, 6.35736e-08, 0, 1.168, 0, -6.35736e-08, 0, 1, -2.22688e-08, 0.606596, 0.50945 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="2window6" type="CSGPolygon" parent="building-main-node" groups=["floor2"]]
+transform = Transform( 1, 0, 6.35736e-08, 0, 1.168, 0, -6.35736e-08, 0, 1, -0.35, 0.606596, 0.50945 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="3window4" type="CSGPolygon" parent="building-main-node" groups=["floor3"]]
+transform = Transform( 1, 0, 6.35736e-08, 0, 1.168, 0, -6.35736e-08, 0, 1, 0.35, 1.01319, 0.50945 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="3window5" type="CSGPolygon" parent="building-main-node" groups=["floor3"]]
+transform = Transform( 1, 0, 6.35736e-08, 0, 1.168, 0, -6.35736e-08, 0, 1, -2.22688e-08, 1.01319, 0.50945 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="3window6" type="CSGPolygon" parent="building-main-node" groups=["floor3"]]
+transform = Transform( 1, 0, 6.35736e-08, 0, 1.168, 0, -6.35736e-08, 0, 1, -0.35, 1.01319, 0.50945 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="1window7" type="CSGPolygon" parent="building-main-node" groups=["floor1"]]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1.168, 0, 1, 0, -4.37114e-08, -0.50945, 0.2, 0.35 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="1window8" type="CSGPolygon" parent="building-main-node" groups=["floor1"]]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1.168, 0, 1, 0, -4.37114e-08, -0.50945, 0.2, -7.69248e-08 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="1window9" type="CSGPolygon" parent="building-main-node" groups=["floor1"]]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1.168, 0, 1, 0, -4.37114e-08, -0.50945, 0.2, -0.35 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="2window7" type="CSGPolygon" parent="building-main-node" groups=["floor2"]]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1.168, 0, 1, 0, -4.37114e-08, -0.50945, 0.606596, 0.35 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="2window8" type="CSGPolygon" parent="building-main-node" groups=["floor2"]]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1.168, 0, 1, 0, -4.37114e-08, -0.50945, 0.606596, -7.69248e-08 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="2window9" type="CSGPolygon" parent="building-main-node" groups=["floor2"]]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1.168, 0, 1, 0, -4.37114e-08, -0.50945, 0.606596, -0.35 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="3window7" type="CSGPolygon" parent="building-main-node" groups=["floor3"]]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1.168, 0, 1, 0, -4.37114e-08, -0.50945, 1.01319, 0.35 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="3window8" type="CSGPolygon" parent="building-main-node" groups=["floor3"]]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1.168, 0, 1, 0, -4.37114e-08, -0.50945, 1.01319, -7.69248e-08 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="3window9" type="CSGPolygon" parent="building-main-node" groups=["floor3"]]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1.168, 0, 1, 0, -4.37114e-08, -0.50945, 1.01319, -0.35 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="1window10" type="CSGPolygon" parent="building-main-node" groups=["floor1"]]
+transform = Transform( -1, 0, 1.50996e-07, 0, 1.168, 0, -1.50996e-07, 0, -1, -0.35, 0.2, -0.50945 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="1window11" type="CSGPolygon" parent="building-main-node" groups=["floor1"]]
+transform = Transform( -1, 0, 1.50996e-07, 0, 1.168, 0, -1.50996e-07, 0, -1, 9.91936e-08, 0.2, -0.50945 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="1window12" type="CSGPolygon" parent="building-main-node" groups=["floor1"]]
+transform = Transform( -1, 0, 1.50996e-07, 0, 1.168, 0, -1.50996e-07, 0, -1, 0.35, 0.2, -0.50945 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="2window10" type="CSGPolygon" parent="building-main-node" groups=["floor2"]]
+transform = Transform( -1, 0, 1.50996e-07, 0, 1.168, 0, -1.50996e-07, 0, -1, -0.35, 0.606596, -0.50945 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="2window11" type="CSGPolygon" parent="building-main-node" groups=["floor2"]]
+transform = Transform( -1, 0, 1.50996e-07, 0, 1.168, 0, -1.50996e-07, 0, -1, 9.91936e-08, 0.606596, -0.50945 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="2window12" type="CSGPolygon" parent="building-main-node" groups=["floor2"]]
+transform = Transform( -1, 0, 1.50996e-07, 0, 1.168, 0, -1.50996e-07, 0, -1, 0.35, 0.606596, -0.50945 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="3window10" type="CSGPolygon" parent="building-main-node" groups=["floor3"]]
+transform = Transform( -1, 0, 1.50996e-07, 0, 1.168, 0, -1.50996e-07, 0, -1, -0.35, 1.01319, -0.50945 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="3window11" type="CSGPolygon" parent="building-main-node" groups=["floor3"]]
+transform = Transform( -1, 0, 1.50996e-07, 0, 1.168, 0, -1.50996e-07, 0, -1, 9.91936e-08, 1.01319, -0.50945 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="3window12" type="CSGPolygon" parent="building-main-node" groups=["floor3"]]
+transform = Transform( -1, 0, 1.50996e-07, 0, 1.168, 0, -1.50996e-07, 0, -1, 0.35, 1.01319, -0.50945 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="4window" type="CSGPolygon" parent="building-main-node" groups=["floor4"]]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1.168, 0, -1, 0, -1.62921e-07, 0.50945, 1.41979, -0.35 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="4window2" type="CSGPolygon" parent="building-main-node" groups=["floor4"]]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1.168, 0, -1, 0, -1.62921e-07, 0.50945, 1.41979, -2.71402e-14 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="4window3" type="CSGPolygon" parent="building-main-node" groups=["floor4"]]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1.168, 0, -1, 0, -1.62921e-07, 0.50945, 1.41979, 0.35 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="4window4" type="CSGPolygon" parent="building-main-node" groups=["floor4"]]
+transform = Transform( 1, 0, 6.35736e-08, 0, 1.168, 0, -6.35736e-08, 0, 1, 0.35, 1.41979, 0.50945 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="4window5" type="CSGPolygon" parent="building-main-node" groups=["floor4"]]
+transform = Transform( 1, 0, 6.35736e-08, 0, 1.168, 0, -6.35736e-08, 0, 1, -2.22688e-08, 1.41979, 0.50945 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="4window6" type="CSGPolygon" parent="building-main-node" groups=["floor4"]]
+transform = Transform( 1, 0, 6.35736e-08, 0, 1.168, 0, -6.35736e-08, 0, 1, -0.35, 1.41979, 0.50945 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="4window7" type="CSGPolygon" parent="building-main-node" groups=["floor4"]]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1.168, 0, 1, 0, -4.37114e-08, -0.50945, 1.41979, 0.35 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="4window8" type="CSGPolygon" parent="building-main-node" groups=["floor4"]]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1.168, 0, 1, 0, -4.37114e-08, -0.50945, 1.41979, -7.69248e-08 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="4window9" type="CSGPolygon" parent="building-main-node" groups=["floor4"]]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1.168, 0, 1, 0, -4.37114e-08, -0.50945, 1.41979, -0.35 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="4window10" type="CSGPolygon" parent="building-main-node" groups=["floor4"]]
+transform = Transform( -1, 0, 1.50996e-07, 0, 1.168, 0, -1.50996e-07, 0, -1, -0.35, 1.41979, -0.50945 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="4window11" type="CSGPolygon" parent="building-main-node" groups=["floor4"]]
+transform = Transform( -1, 0, 1.50996e-07, 0, 1.168, 0, -1.50996e-07, 0, -1, 9.91937e-08, 1.41979, -0.50945 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="4window12" type="CSGPolygon" parent="building-main-node" groups=["floor4"]]
+transform = Transform( -1, 0, 1.50996e-07, 0, 1.168, 0, -1.50996e-07, 0, -1, 0.35, 1.41979, -0.50945 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1 )
+depth = 0.06
+material = SubResource( 1 )
+
+[node name="roof" type="CSGPolygon" parent="building-main-node" groups=["roof"]]
+transform = Transform( -1, 0, 1.50996e-07, 0, 0.902, 0, -1.50996e-07, 0, -1, 0, 1.54639, -0.444 )
+operation = 2
+snap = 0.025
+polygon = PoolVector2Array( -0.444, 0.064, -0.444, 0.1, 0.444, 0.1, 0.444, 0.064 )
+depth = 0.88
+material = SubResource( 3 )
+
+[node name="Roof Objects Temp" type="CSGCombiner" parent="building-main-node" groups=["roof"]]
+transform = Transform( -1, 0, 1.50996e-07, 0, 0.902, 0, -1.50996e-07, 0, -1, 0, 1.54639, -0.444 )
+snap = 0.0001
+
+[node name="CSGPolygon" type="CSGPolygon" parent="building-main-node/Roof Objects Temp"]
+transform = Transform( 0.1, -6.96941e-16, 6.96941e-16, 0, 0.0707107, 0.0707107, -5.80273e-16, -0.0707107, 0.0707107, -0.0124864, 0.0753847, -0.16282 )
+snap = 0.0001
+polygon = PoolVector2Array( -0.110393, 0.185502, 0.536531, 0.442288, 1, 1, 0.631075, 0.422556 )
+mode = 1
+spin_degrees = 360.0
+spin_sides = 10
+
+[node name="CSGPolygon3" type="CSGPolygon" parent="building-main-node/Roof Objects Temp"]
+transform = Transform( 0.05, -0.0612372, 0.0612372, 0, 0.0707107, 0.0707107, -0.0866025, -0.0353553, 0.0353553, -0.249186, 0.0753847, -0.475439 )
+snap = 0.0001
+polygon = PoolVector2Array( -0.110393, 0.185502, 0.536531, 0.442288, 1, 1, 0.631075, 0.422556 )
+mode = 1
+spin_degrees = 360.0
+spin_sides = 10
+
+[node name="CSGPolygon2" type="CSGPolygon" parent="building-main-node/Roof Objects Temp"]
+transform = Transform( 0.239, 0, 4.61397e-16, 0, 0.239, 0, -4.61397e-16, 0, 0.239, 0.0586922, -2.69542e-07, -0.344959 )
+snap = 0.0001
+material = SubResource( 4 )
+
+[node name="CSGPolygon4" type="CSGPolygon" parent="building-main-node/Roof Objects Temp"]
+transform = Transform( 0.006, 0, 3.25539e-19, 0, 0.322, 0, -3.25539e-19, 0, 0.006, 9.25405e-15, -1.37381e-07, 0 )
+snap = 0.0001
+material = SubResource( 5 )
+
+[node name="CSGPolygon6" type="CSGPolygon" parent="building-main-node/Roof Objects Temp"]
+transform = Transform( -3.0598e-10, -0.125, 9.05975e-10, 0.007, -5.46392e-09, -8.17189e-10, 9.53388e-10, 1.88745e-08, 0.006, 0.0621147, 0.289187, -9.37907e-09 )
+snap = 0.0001
+material = SubResource( 5 )
+
+[node name="CSGPolygon7" type="CSGPolygon" parent="building-main-node/Roof Objects Temp"]
+transform = Transform( -9.53388e-10, -1.34106e-08, -0.006, 0.007, -5.46392e-09, -8.17189e-10, -3.0598e-10, -0.125, 6.43707e-10, 0.0401819, 0.289187, 0.056933 )
+snap = 0.0001
+material = SubResource( 5 )
+
+[node name="CSGPolygon8" type="CSGPolygon" parent="building-main-node/Roof Objects Temp"]
+transform = Transform( -9.53388e-10, -1.34106e-08, -0.006, 0.007, -5.46392e-09, -8.17189e-10, -3.0598e-10, -0.125, 6.43707e-10, 0.0181726, 0.289187, 0.056933 )
+snap = 0.0001
+material = SubResource( 5 )
+
+[node name="CSGPolygon9" type="CSGPolygon" parent="building-main-node/Roof Objects Temp"]
+transform = Transform( -9.53388e-10, -1.34106e-08, -0.006, 0.007, -5.46392e-09, -8.17189e-10, -3.0598e-10, -0.125, 6.43707e-10, -0.00533132, 0.289187, 0.056933 )
+snap = 0.0001
+material = SubResource( 5 )
+
+[node name="CSGPolygon10" type="CSGPolygon" parent="building-main-node/Roof Objects Temp"]
+transform = Transform( -9.53388e-10, -1.34106e-08, -0.006, 0.007, -5.46392e-09, -8.17189e-10, -3.0598e-10, -0.125, 6.43707e-10, -0.0294424, 0.289187, 0.056933 )
+snap = 0.0001
+material = SubResource( 5 )
+
+[node name="CSGPolygon11" type="CSGPolygon" parent="building-main-node/Roof Objects Temp"]
+transform = Transform( -9.53388e-10, -1.34106e-08, -0.006, 0.007, -5.46392e-09, -8.17189e-10, -3.0598e-10, -0.125, 6.43707e-10, -0.0566657, 0.289187, 0.0569331 )
+snap = 0.0001
+material = SubResource( 5 )
+
+[node name="CSGPolygon5" type="CSGPolygon" parent="building-main-node/Roof Objects Temp"]
+transform = Transform( 0.085, 0, -1.84743e-16, 0, 0.322, 0, 1.84743e-16, 0, 0.085, 0.175164, -4.01703e-07, -0.470126 )
+snap = 0.0001
+material = SubResource( 5 )
+
+[node name="Floor 1" type="Spatial" parent="building-main-node"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.2, 0 )
+
+[node name="Floor 2" type="Spatial" parent="building-main-node"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.606596, 0 )
+
+[node name="Floor 3" type="Spatial" parent="building-main-node"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1.01319, 0 )
+
+[node name="Floor 4" type="Spatial" parent="building-main-node"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.70421e-08, 1.41979, 0 )
+
+[node name="roof_pos" type="Spatial" parent="building-main-node"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.70421e-08, 1.62639, 0 )
