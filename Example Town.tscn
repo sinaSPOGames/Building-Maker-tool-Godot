@@ -1,0 +1,444 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://addons/sina.buildingmaker/Maker/building.tscn" type="PackedScene" id=1]
+
+[sub_resource type="OpenSimplexNoise" id=5]
+octaves = 9
+period = 256.0
+persistence = 0.206
+lacunarity = 0.1
+
+[sub_resource type="NoiseTexture" id=6]
+seamless = true
+noise = SubResource( 5 )
+
+[sub_resource type="NoiseTexture" id=7]
+seamless = true
+as_normalmap = true
+noise = SubResource( 5 )
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 1, 0.74902, 0.443137, 1 )
+albedo_texture = SubResource( 6 )
+metallic = 0.29
+roughness_texture = SubResource( 6 )
+normal_enabled = true
+normal_scale = -0.87
+normal_texture = SubResource( 7 )
+uv1_scale = Vector3( 20, 20, 20 )
+uv1_triplanar = true
+
+[sub_resource type="OpenSimplexNoise" id=1]
+period = 3.0
+
+[sub_resource type="NoiseTexture" id=2]
+seamless = true
+noise = SubResource( 1 )
+
+[sub_resource type="NoiseTexture" id=3]
+seamless = true
+as_normalmap = true
+noise = SubResource( 1 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.956863, 0.956863, 0.956863, 1 )
+albedo_texture = SubResource( 2 )
+metallic = 0.29
+roughness_texture = SubResource( 2 )
+normal_enabled = true
+normal_scale = -2.25
+normal_texture = SubResource( 3 )
+uv1_scale = Vector3( 3, 3, 3 )
+uv1_triplanar = true
+
+[node name="Spatial" type="Spatial"]
+
+[node name="base streets" type="Spatial" parent="."]
+
+[node name="CSGCombiner" type="CSGCombiner" parent="base streets"]
+
+[node name="base" type="CSGBox" parent="base streets/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
+width = 10.0
+height = 1.0
+depth = 10.0
+material = SubResource( 8 )
+
+[node name="streets" type="CSGBox" parent="base streets/CSGCombiner"]
+operation = 2
+snap = 0.0001
+width = 16.503
+height = 0.033
+depth = 1.0
+material = SubResource( 4 )
+
+[node name="streets2" type="CSGBox" parent="base streets/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2 )
+operation = 2
+snap = 0.0001
+width = 16.503
+height = 0.033
+depth = 1.0
+material = SubResource( 4 )
+
+[node name="streets3" type="CSGBox" parent="base streets/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
+operation = 2
+snap = 0.0001
+width = 16.503
+height = 0.033
+depth = 1.0
+material = SubResource( 4 )
+
+[node name="streets4" type="CSGBox" parent="base streets/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4 )
+operation = 2
+snap = 0.0001
+width = 16.503
+height = 0.033
+depth = 1.0
+material = SubResource( 4 )
+
+[node name="streets5" type="CSGBox" parent="base streets/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4 )
+operation = 2
+snap = 0.0001
+width = 16.503
+height = 0.033
+depth = 1.0
+material = SubResource( 4 )
+
+[node name="streets6" type="CSGBox" parent="base streets/CSGCombiner"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
+operation = 2
+snap = 0.0001
+width = 16.503
+height = 0.033
+depth = 1.0
+material = SubResource( 4 )
+
+[node name="streets7" type="CSGBox" parent="base streets/CSGCombiner"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, -5.8423 )
+operation = 2
+snap = 0.0001
+width = 16.503
+height = 0.033
+depth = 1.0
+material = SubResource( 4 )
+
+[node name="streets8" type="CSGBox" parent="base streets/CSGCombiner"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 0, 9.7988 )
+operation = 2
+snap = 0.0001
+width = 16.503
+height = 0.033
+depth = 1.0
+material = SubResource( 4 )
+
+[node name="streets9" type="CSGBox" parent="base streets/CSGCombiner"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 0, 1.74846e-07 )
+operation = 2
+snap = 0.0001
+width = 16.503
+height = 0.033
+depth = 1.0
+material = SubResource( 4 )
+
+[node name="streets10" type="CSGBox" parent="base streets/CSGCombiner"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4, 0, -1.74846e-07 )
+operation = 2
+snap = 0.0001
+width = 16.503
+height = 0.033
+depth = 1.0
+material = SubResource( 4 )
+
+[node name="buildings" type="Spatial" parent="."]
+
+[node name="Plugin" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -0.721427, 0, 0.749326 )
+window_size = 1.278
+
+[node name="Plugin2" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -0.721427, 0, 1.15763 )
+window_size = 1.278
+
+[node name="Plugin3" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -1.2377, 0, 0.749326 )
+window_size = 1.278
+
+[node name="Plugin4" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -1.2377, 0, 1.15763 )
+window_size = 1.278
+
+[node name="Plugin61" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -2.74223, 0, 0.749326 )
+window_size = 1.278
+
+[node name="Plugin62" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -2.74223, 0, 1.15763 )
+window_size = 1.278
+
+[node name="Plugin63" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -3.25851, 0, 0.749326 )
+window_size = 1.278
+
+[node name="Plugin64" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -3.25851, 0, 1.15763 )
+window_size = 1.278
+
+[node name="Plugin65" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -2.74223, 0, -1.18026 )
+window_size = 1.278
+
+[node name="Plugin66" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -2.74223, 0, -0.771959 )
+window_size = 1.278
+
+[node name="Plugin67" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -3.25851, 0, -1.18026 )
+window_size = 1.278
+
+[node name="Plugin68" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -3.25851, 0, -0.771959 )
+window_size = 1.278
+
+[node name="Plugin69" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -2.74223, 0, -3.17375 )
+window_size = 1.278
+
+[node name="Plugin70" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -2.74223, 0, -2.76544 )
+window_size = 1.278
+
+[node name="Plugin71" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -3.25851, 0, -3.17375 )
+window_size = 1.278
+
+[node name="Plugin72" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -3.25851, 0, -2.76544 )
+window_size = 1.278
+
+[node name="Plugin49" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -0.721427, 0, 2.74933 )
+window_size = 1.278
+
+[node name="Plugin50" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -0.721427, 0, 3.15763 )
+window_size = 1.278
+
+[node name="Plugin51" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -1.2377, 0, 2.74933 )
+window_size = 1.278
+
+[node name="Plugin52" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -1.2377, 0, 3.15763 )
+window_size = 1.278
+
+[node name="Plugin53" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -1.72143, 0, 2.74933 )
+window_size = 1.278
+
+[node name="Plugin54" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -1.72143, 0, 3.15763 )
+window_size = 1.278
+
+[node name="Plugin55" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -2.2377, 0, 2.74933 )
+window_size = 1.278
+
+[node name="Plugin56" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -2.2377, 0, 3.15763 )
+window_size = 1.278
+
+[node name="Plugin57" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -2.67386, 0, 2.74933 )
+window_size = 1.278
+
+[node name="Plugin58" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -2.67386, 0, 3.15763 )
+window_size = 1.278
+
+[node name="Plugin59" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -3.19014, 0, 2.74933 )
+window_size = 1.278
+
+[node name="Plugin60" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -3.19014, 0, 3.15763 )
+window_size = 1.278
+
+[node name="Plugin5" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -0.721427, 0, -1.22185 )
+window_size = 1.278
+
+[node name="Plugin6" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -0.721427, 0, -0.81355 )
+window_size = 1.278
+
+[node name="Plugin7" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -1.2377, 0, -1.22185 )
+window_size = 1.278
+
+[node name="Plugin8" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -1.2377, 0, -0.81355 )
+window_size = 1.278
+
+[node name="Plugin9" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -0.721427, 0, -3.1737 )
+window_size = 1.278
+
+[node name="Plugin10" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -0.721427, 0, -2.76539 )
+window_size = 1.278
+
+[node name="Plugin11" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -1.2377, 0, -3.1737 )
+window_size = 1.278
+
+[node name="Plugin12" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, -1.2377, 0, -2.76539 )
+window_size = 1.278
+
+[node name="Plugin13" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 1.26549, 0, 0.749326 )
+window_size = 1.278
+
+[node name="Plugin14" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 1.26549, 0, 1.15763 )
+window_size = 1.278
+
+[node name="Plugin15" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 0.749214, 0, 0.749326 )
+window_size = 1.278
+
+[node name="Plugin16" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 0.749214, 0, 1.15763 )
+window_size = 1.278
+
+[node name="Plugin17" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 1.26549, 0, -1.22185 )
+window_size = 1.278
+
+[node name="Plugin18" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 1.26549, 0, -0.81355 )
+window_size = 1.278
+
+[node name="Plugin19" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 0.749214, 0, -1.22185 )
+window_size = 1.278
+
+[node name="Plugin20" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 0.749214, 0, -0.81355 )
+window_size = 1.278
+
+[node name="Plugin21" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 1.26549, 0, -3.1737 )
+window_size = 1.278
+
+[node name="Plugin22" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 1.26549, 0, -2.76539 )
+window_size = 1.278
+
+[node name="Plugin23" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 0.749214, 0, -3.1737 )
+window_size = 1.278
+
+[node name="Plugin24" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 0.749214, 0, -2.76539 )
+window_size = 1.278
+
+[node name="Plugin25" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 2.20668, 0, 0.749326 )
+window_size = 1.278
+
+[node name="Plugin26" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 2.20668, 0, 1.15763 )
+window_size = 1.278
+
+[node name="Plugin27" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 1.6904, 0, 0.749326 )
+window_size = 1.278
+
+[node name="Plugin28" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 1.6904, 0, 1.15763 )
+window_size = 1.278
+
+[node name="Plugin29" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 2.20668, 0, -1.22185 )
+window_size = 1.278
+
+[node name="Plugin30" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 2.20668, 0, -0.81355 )
+window_size = 1.278
+
+[node name="Plugin31" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 1.6904, 0, -1.22185 )
+window_size = 1.278
+
+[node name="Plugin32" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 1.6904, 0, -0.81355 )
+window_size = 1.278
+
+[node name="Plugin33" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 2.20668, 0, -3.1737 )
+window_size = 1.278
+
+[node name="Plugin34" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 2.20668, 0, -2.76539 )
+window_size = 1.278
+
+[node name="Plugin35" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 1.6904, 0, -3.1737 )
+window_size = 1.278
+
+[node name="Plugin36" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 1.6904, 0, -2.76539 )
+window_size = 1.278
+
+[node name="Plugin37" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 3.25331, 0, 0.749326 )
+window_size = 1.278
+
+[node name="Plugin38" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 3.25331, 0, 1.15763 )
+window_size = 1.278
+
+[node name="Plugin39" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 2.73703, 0, 0.749326 )
+window_size = 1.278
+
+[node name="Plugin40" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 2.73703, 0, 1.15763 )
+window_size = 1.278
+
+[node name="Plugin41" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 3.25331, 0, -1.22185 )
+window_size = 1.278
+
+[node name="Plugin42" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 3.25331, 0, -0.81355 )
+window_size = 1.278
+
+[node name="Plugin43" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 2.73703, 0, -1.22185 )
+window_size = 1.278
+
+[node name="Plugin44" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 2.73703, 0, -0.81355 )
+window_size = 1.278
+
+[node name="Plugin45" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 3.25331, 0, -3.1737 )
+window_size = 1.278
+
+[node name="Plugin46" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 3.25331, 0, -2.76539 )
+window_size = 1.278
+
+[node name="Plugin47" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 2.73703, 0, -3.1737 )
+window_size = 1.278
+
+[node name="Plugin48" parent="buildings" instance=ExtResource( 1 )]
+transform = Transform( 0.348, 0, 0, 0, 0.348, 0, 0, 0, 0.348, 2.73703, 0, -2.76539 )
+window_size = 1.278
